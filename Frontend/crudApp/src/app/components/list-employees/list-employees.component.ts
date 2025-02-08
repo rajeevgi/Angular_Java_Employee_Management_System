@@ -30,6 +30,10 @@ export class ListEmployeesComponent implements OnInit {
     });
   }
 
+  viewEmployees(id : number){
+    this.router.navigate(['/app-get-employee', id]);
+  }
+
   updateEmployee(empId : number){
     this.router.navigate(['app-update-employee', empId])
   }

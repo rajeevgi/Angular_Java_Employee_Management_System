@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { GetEmployeeComponent } from './components/get-employee/get-employee.component';
 
 export const routes: Routes = [
 
@@ -15,6 +16,11 @@ export const routes: Routes = [
     {
         path : 'app-list-employees',
         component : ListEmployeesComponent
+    },
+
+    {
+        path : 'app-get-employee/:id',
+        component : GetEmployeeComponent
     },
 
     {
