@@ -1,0 +1,21 @@
+<div class="row p-3 bg-secondary text-white text-center rounded">
+    <h2>Save Employee Form</h2>
+</div>
+
+<div class="container w-50 p-3">
+    <form (ngSubmit)="onSubmit()" class="p-4 rounded border border-dark shadow">
+        <div class="mb-3 mt-3">
+            <label for="fname" class="form-label">Enter First Name:</label>
+            <input type="text" class="form-control rounded" [(ngModel)]="employee.firstName" id="fname" placeholder="Enter first name" name="fname">
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Enter Last Name:</label>
+            <input type="text" class="form-control rounded" [(ngModel)]="employee.lastName" id="lname" placeholder="Enter last name" name="lname">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Enter Email:</label>
+            <input type="email" class="form-control rounded" [(ngModel)]="employee.emailId" id="email" placeholder="Enter employee email" name="email">
+        </div>
+        <button type="submit" class="btn btn-success rounded" >Save Employee</button>
+    </form>
+</div>
