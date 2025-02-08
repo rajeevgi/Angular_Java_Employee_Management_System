@@ -14,6 +14,8 @@ export class ListEmployeesComponent implements OnInit {
 
   empList : Employee[] = [];
 
+  id !: number;
+
   router = inject(Router);
 
   constructor(private employeeService : EmployeeService) {}
@@ -30,5 +32,11 @@ export class ListEmployeesComponent implements OnInit {
 
   updateEmployee(empId : number){
     this.router.navigate(['app-update-employee', empId])
+  }
+
+  deleteEmployees(id : number){
+    this.employeeService.deleteEmployees(id).subscribe((res : any) => {
+      this.getEmployees();
+    })
   }
 }

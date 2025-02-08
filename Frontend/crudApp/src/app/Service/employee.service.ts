@@ -19,7 +19,7 @@ export class EmployeeService {
 
   // Get mapping to get employee by id.
   getEmployeeById(id : number) : Observable<Employee> {
-    return this.http.get<Employee>(`${this.apiUrl}/${id}`);
+    return this.http.get<Employee>(`${this.apiUrl}/getEmployeeById/${id}`);
   }
   
   // Post mapping to add employees.
@@ -28,12 +28,12 @@ export class EmployeeService {
   }
 
   // Put mapping to update employees.
-  updateEmployees(empId : number) {
-    return this.http.put(`${this.apiUrl}/update/empId`, empId);
+  updateEmployees(empId: number, employee: Employee) : Observable<object> {
+    return this.http.put(`${this.apiUrl}/update/${empId}`, employee);
   }
 
   // Delete mapping to delete employees.
-  // deleteEmployees(empId : number){
-  //   return this.http.delete(`${this.apiUrl}/deleteEmp/empId`, empId);
-  // }
+  deleteEmployees(empId : number) : Observable<Object>{
+    return this.http.delete(`${this.apiUrl}/deleteEmp/${empId}`);
+  }
 }
