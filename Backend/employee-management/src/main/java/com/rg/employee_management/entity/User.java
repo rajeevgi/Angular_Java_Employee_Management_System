@@ -7,24 +7,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class Employees {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int empId;
+    private int id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "Username")
+    private String username;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "Email", unique = true)
+    private String email;
 
-    @Column(name = "email_id", unique = true)
-    private String emailId;
+    @Column(name = "Password")
+    private String password;
 }
